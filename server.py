@@ -19,7 +19,7 @@ def post_info():
 	if (not isinstance(name, str) or len(name) == 0) and (not isinstance(age, str) or len(age) == 0) and (not isinstance(city, str) or len(city) == 0):
 	    return abort(400)
 
-	return f"Name: {name}\nAge: {age}\nCity: {city}"
+	return f"<p>Name: {name}</p><p>Age: {age}</p><p>City: {city}</p>"
 
 if __name__ == '__main__':
 	app.run(threaded=True)
