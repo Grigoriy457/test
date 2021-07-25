@@ -6,10 +6,9 @@ app = Flask(__name__)
 def hello():
 	return "<b>Hello, World!</b>"
 
-@app.route("/post", methods=['POST', 'GET'])
+@app.route("/post", methods=['GET'])
 def post_info():
-	data = request.json
-	print(data)
+	data = request.args
 	if not isinstance(data, dict):
 	    return abort(400)
 
