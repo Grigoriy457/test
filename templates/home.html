@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Instagram parser</title>
+
+     <link rel="icon" type="image/svg" href="https://www.instagram.com/favicon.ico">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="/static/css/style.css">
+
+     <script src="static/js/main.js"></script>
+</head>
+<body>
+     <header class="header active">
+		<div class="container">
+			<div class="header__inner">
+				<div class="header__top">
+					<div class="title"><h1 class="title"><a href="/" class="title">Instagram parser</a></h1></div>
+				</div>
+			</div>
+		</div>
+	</header>
+     <main class="main_main active">
+          <form action="/load">
+               <input type="text" name="user_id" class="user_id" style="display: none;" value="{{ user_id }}">
+
+               <div class="computer">
+                    <section class="limit">
+                         <h2 class="subtitle">Limit: <input type="number" name="limit-input" id="limit-input" class="limit-input input" required></h2>
+                    </section>
+
+                    <section class="likes">
+                         <label class="checkbox"><h2 class="subtitle">Likes: <input class="likes-checkbox checkbox" name="likes-input" type="checkbox" id="likes_checkbox" onclick="clickFunction()" autocomplete="off"></h2></label>
+                         <ol class="likes_ul" id="likes_ul">
+                              <li>
+                                   <select name="likes_select">
+                                        <option selected value=">">></option>
+                                        <option value=">=">>=</option>
+                                        <option value="=">=</option>
+                                        <option value="<="><=</option>
+                                        <option value="<"><</option>
+                                   </select>
+                              </li>
+                              <li>
+                                   Count: <input type="number" name="likes-input__count" id="likes-input" autocomplete="off">
+                              </li>
+                         </ol>
+                    </section>
+
+                    <section class="subscribers">
+                         <label class="checkbox"><h2 class="subtitle">Subscribers: <input class="subscribers-checkbox checkbox" name="subscribers-input" type="checkbox" id="subscribers_checkbox" onclick="clickFunction()" autocomplete="off"></h2></label>
+                         <ol class="subscribers_ul" id="subscribers_ul">
+                              <li>
+                                   <select name="subscribers_select">
+                                        <option selected value=">">></option>
+                                        <option value=">=">>=</option>
+                                        <option value="=">=</option>
+                                        <option value="<="><=</option>
+                                        <option value="<"><</option>
+                                   </select>
+                              </li>
+                              <li>
+                                   Count: <input type="number" name="subscribers-input__count" id="subscribers-input" autocomplete="off">
+                              </li>
+                         </ol>
+                    </section>
+
+                    <section class="groop">
+                         <h2 class="subtitle">Groop: <input class="groop-input input" name="groop-input" type="text" id="groop-input" required></h2>
+                    </section>
+
+                    <section class="stop_word_section">
+                         <h2 class="pass_word_subtitle subtitle">Pass word: <input class="stop_word-input input" name="stop_word-input" type="text" id="stop_word_checkbox"><span class="plus active_span" onclick="add_item()"></span></h2>
+                    </section>
+
+                    <section class="button">
+                         <button type="submit" class="button" onclick="check_invalid_str()">Submit</button>
+                    </section>
+               </div>
+               <div class="mobile">
+                    <section class="limit">
+                         <h2 class="subtitle">Limit: <input type="number" name="limit-input" id="limit-input" class="limit-input input" required></h2>
+                    </section>
+
+                    <section class="likes">
+                         <label class="checkbox"><h2 class="subtitle">Likes: <input class="likes-checkbox checkbox" name="likes-input" type="checkbox" id="likes_checkbox" onclick="clickFunction()" autocomplete="off"></h2></label>
+                         <ol class="likes_ul" id="likes_ul">
+                              <li>
+                                   <select name="likes_select">
+                                        <option selected value=">">></option>
+                                        <option value=">=">>=</option>
+                                        <option value="=">=</option>
+                                        <option value="<="><=</option>
+                                        <option value="<"><</option>
+                                   </select>
+                              </li>
+                              <li>
+                                   Count: <input type="number" name="likes-input__count" id="likes-input" autocomplete="off">
+                              </li>
+                         </ol>
+                    </section>
+
+                    <section class="subscribers">
+                         <label class="checkbox"><h2 class="subtitle">Subscribers: <input class="subscribers-checkbox checkbox" name="subscribers-input" type="checkbox" id="subscribers_checkbox" onclick="clickFunction()" autocomplete="off"></h2></label>
+                         <ol class="subscribers_ul" id="subscribers_ul">
+                              <li>
+                                   <select name="subscribers_select">
+                                        <option selected value=">">></option>
+                                        <option value=">=">>=</option>
+                                        <option value="=">=</option>
+                                        <option value="<="><=</option>
+                                        <option value="<"><</option>
+                                   </select>
+                              </li>
+                              <li>
+                                   Count: <input type="number" name="subscribers-input__count" id="subscribers-input" autocomplete="off">
+                              </li>
+                         </ol>
+                    </section>
+
+                    <section class="groop">
+                         <h2 class="groop_subtitle subtitle"><input placeholder="Groop" class="groop-input input" name="groop-input" type="text" id="groop-input" required></h2>
+                    </section>
+
+                    <section class="stop_word_section">
+                         <h2 class="pass_word_subtitle subtitle"><input placeholder="Pass word" class="stop_word-input input" name="stop_word-input" type="text" id="stop_word_input"><span class="plus active_span" onclick="add_item()"></span></h2>
+                    </section>
+
+                    <section class="button">
+                         <button type="submit" class="button" onclick="check_invalid_str()">Submit</button>
+                    </section>
+               </div>
+          </form>
+     </main>
+     <main class="main_load disactive">
+          <form action="/show_status_load/{{ user_id }}">
+               <!-- <input type="text" name="user_id" class="user_id" style="display: none;" value="{{ user_id }}"> -->
+               <div class="title">
+                    <h1 class="title">
+                         <a href="/" class="title">Instagram parser</a>
+                         <button type="submit" class="button_2">(loading...)</button>
+                    </h1>
+               </div>
+               <svg class="spinner" viewBox="0 0 50 50">
+                    <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+               </svg>
+          </form>
+     </main>
+</body>
+</html>

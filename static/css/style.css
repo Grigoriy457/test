@@ -1,0 +1,253 @@
+body {
+     height: 100%;
+     background-image: linear-gradient(90deg, #5361d4, #d53087);
+     color: white;
+     font-family: 'Quicksand', sans-serif;
+}
+
+div.computer {
+     display: block;
+}
+
+div.mobile {
+     display: none;
+}
+
+input::-webkit-input-placeholder {
+     color: white;
+}
+
+h1.title {
+     font-size: 55px;
+     line-height: 48px;
+     font-weight: 100;
+}
+
+a.title {
+     text-decoration: none;
+     color: white;
+}
+
+div.title {
+     padding: 60px 0;
+     display: flex;
+     justify-content: space-evenly;
+}
+
+.subtitle {
+     margin: 9px 0;
+     font-size: 30px;
+}
+
+input.checkbox {
+     width: 24px;
+     height: 24px;
+}
+
+.subtitle input.input {
+     height: 30px;
+     font-size: 20px;
+}
+
+input[type='number'] {
+     -moz-appearance:textfield;
+ }
+ 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+}
+
+input, button.button {
+     outline: none;
+     background-color: #ffffff00;
+     border: none;
+     border: 1px solid #ffffff;
+     border-radius: 30px;
+     color: white;
+}
+
+button.button_2 {
+     font-size: 55px;
+     outline: none;
+     background-color: #ffffff00;
+     border: none;
+}
+
+button.button {
+     margin-top: 20px;
+     background-color: #ffffff2a;
+}
+
+input {
+     padding-left: 6px;
+     padding-right: 6px;
+}
+
+button, .checkbox {
+     cursor: pointer;
+}
+
+.checkbox {
+     overflow: hidden;
+     position: relative;
+}
+
+ol {
+     list-style: none;
+     margin: 8px 0;
+     display: none;
+}
+
+li + li {
+     margin-top: 15px;
+}
+
+main.main {
+     margin-left: inherit;
+     flex-wrap: nowrap;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+button.button {
+     width: 300px;
+     height: 30px;
+}
+
+section + section {
+     margin-top: 15px;
+}
+
+span.plus {
+     position: relative;
+     cursor: pointer;
+}
+
+span.plus.active_span::before {
+     content: '';
+     background-color: white;
+     width: 6px;
+     height: 24px;
+     top: 11.5px;
+     position: absolute;
+     left: 14.76px;
+     border-radius: 30px;
+}
+
+span.plus.active_span::after {
+     content: '';
+     background-color: white;
+     width: 24px;
+     height: 6px;
+     top: 20px;
+     position: absolute;
+     left: 6px;
+     border-radius: 30px;
+}
+
+@media (max-width: 800px) {
+     div.mobile {
+          display: block;
+     }
+
+     div.computer {
+          display: none;
+     }
+
+     h1.title {
+          font-size: 45px;
+     }
+
+     input.checkbox {
+          height: 21px;
+          width: 21px;
+     }
+
+     .subtitle input.input {
+          font-size: 17px;
+     }
+
+     h2.subtitle {
+          font-size: 25px;
+     }
+
+     main.main {
+          margin-left: inherit;
+          flex-direction: column;
+          align-items: center;
+     }
+
+     section {
+          width: 100%;
+          text-align: center;
+     }
+
+     span.plus.active_span::before {
+          top: 7.5px;
+     }
+
+     span.plus.active_span::after {
+          top: 17px;
+     }
+}
+
+.spinner {
+     animation: rotate 2s linear infinite;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin: -25px 0 0 -25px;
+     width: 50px;
+     height: 50px;
+}
+
+.path {
+     stroke: rgb(147, 191, 236);
+     stroke-linecap: round;
+     animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+     100% {
+          transform: rotate(360deg);
+     }
+}
+
+@keyframes dash {
+     0% {
+          stroke-dasharray: 1, 150;
+          stroke-dashoffset: 0;
+     }
+     50% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -35;
+     }
+     100% {
+          stroke-dasharray: 90, 150;
+          stroke-dashoffset: -124;
+     }
+}
+
+main.disactive {
+     display: none;
+}
+
+main.active {
+     display: block;
+}
+
+.main.active {
+     display: flex;
+}
+
+.result_main {
+     width: 80%;
+     height: 90%;
+     background-color: rgba(255, 255, 255, 0.25);
+     border-radius: 30px;
+     margin: 5% 10% 0;
+     padding: 30px 30px;
+     font-size: 25px;
+     color: rgb(191, 223, 255);
+}
